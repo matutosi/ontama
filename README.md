@@ -1,13 +1,24 @@
-# 音声認識システム「おんたま」(ONTAMA: ONsei Total Analysis system by MAtsumura)の使い方
+# How to use ONTAMA   
+# 音声認識システム「おんたま」(ONTAMA: ONsei Total Analysis system by MAtsumura)の使い方   
 
-## 「おんたま」とは
+## 「おんたま」とは   
+## What is ONTAMA?   
 
 「おんたま」は，オフラインで音声認識(文字起こし)をするためのソフトです．
 Googleドキュメントの音声入力や Word for Web (Microsoft Office 365)のディクテーションでも音声認識は可能ですが，オンラインでないと使えません．
 通常の音声データであれば上記を使えば良いですが，何らかの事情でネットが使えないときや，極秘情報のため情報漏洩を防ぎたいときには，オフラインでの音声認識が必要です．
 そのような時，おんたまでのオフラインでの音声認識が可能です．
 
+ONTAMA is a software for offline speech recognition (transcription) for Japanese. 
+You can change languege model by modifying Python code (see how to build). 
+Speech recognition is also possible using Google Docs and MS Word for Web, but only online. 
+Offline speech recognition is necessary when the internet is not available, 
+or when you want to prevent information leaks due to top secret. 
+In these cases, you can use Ontama for offline speech recognition. 
+
 おんたまは，Voskというオフラインの音声認識ソフトとPythonを利用して作成しました．
+
+Ontama was created using offline speech recognition software called Vosk and Python.
 
 https://alphacephei.com/vosk/
 
@@ -15,24 +26,44 @@ https://alphacephei.com/vosk/
 以下のナレーション音声のように，きれいな音声だと非常に認識精度は高いです．
 しかし，開発者がふつうに話している音声だと，精度は非常に低くなります．
 
-http://pro-video.jp/voice/announce/
+http://pro-video.jp/voice/announce/ (Japanese voice sample)
 
-## 免責事項
+The accuracy of the speech recognition is not so different with online tools, 
+as you can compare it yourself. 
+The recognition accuracy is very high when the voice is clean. 
+However, when the developer is speaking normally, the accuracy is very low.
+
+## 免責事項   
+## Disclaimer   
 
 本ソフト「おんたま」の使用による不利益への責任は負えませんので，自己責任でご利用ください．
 不具合がありましたら，松村(matutosi@konan-wu.ac.jp)にご連絡いただけると助かります．
 
-## 導入方法
+We are not responsible for any disadvantages caused by the use of this software ONTAMA, 
+so please use it at your own risk.
+If you have any problems, please contact Matsumura (matutosi@konan-wu.ac.jp).
+
+## 導入方法   
+## Installation   
 
 ### USBメモリ等で ontama.exe と vosk-model (フォルダ) がまとめて配布されている場合
+### If ontama.exe and vosk-model (folder) are distributed together on a USB memory stick, etc.
 
 1．ontama.exe と vosk-model を任意のフォルダに保存(ここでは「ontama」とする)．   
 2．コピーに時間がかかるので，コーヒーを飲みながら(任意)しばらく待機．   
 3．全てのファイルがコピーされると完了．   
 
-### ontama.exe と vosk-model をインターネットから取得する場合
+1. Save ontama.exe and vosk-model in an arbitrary folder (in this case, "ontama").   
+2. Wait for a while while drinking coffee (optional), as it takes time to copy the files.   
+3. When all files have been copied, it is complete.   
+
+### ontama.exe と vosk-model をインターネットから取得する場合   
+### Download ontama.exe and vosk-model from the Internet   
 
 ファイルのダウンロードと解凍・移動には時間がかかるので，コーヒーと本(あるいは他の仕事)などの準備がオススメです．
+
+Downloading, unzipping and moving files takes some long time, 
+it is recommended to have coffee and a book (or other work) ready.
 
 1．ontama.exe を任意のフォルダに保存(ここでは「ontama」とする)．   
 2．https://alphacephei.com/vosk/models から vosk-model-ja-0.xx.zip (xxはバージョン番号)をダウンロード．   
@@ -45,7 +76,23 @@ http://pro-video.jp/voice/announce/
   ここでもしばらく待機．   
 5．全てのファイルがコピーされると完了．   
 
-### フォルダ・ファイル構成の概要
+1．Save ontama.exe in an arbitrary folder (in this case, "ontama").   
+Download vosk-model-ja-0.xx.zip  or other language model (where xx is the version number) from https://alphacephei.com/vosk/models.   
+   vosk-model-en-0.xx.zip   
+   Latest version as of July 2023 https://alphacephei.com/vosk/models/vosk-model-ja-0.22.zip   
+   The download takes quite a while, so have a cup of coffee (optional) and wait a while. 
+3. Unzip the downloaded zip file (again, wait a while).   
+   Rename "vosk-model-ja-0.xx" to "model-ja" in the extracted folder.    
+4. Create a folder called vosk-model in ontama and move all the model-ja from into vosk-model folder.   
+  Again, wait for a while.    
+5. When all the files have been copied, it is complete.   
+
+ONTAMA use "./vosk-model/model-ja/" folder as model data regardless with the actual language that you use. 
+So when you save model files in "./vosk-model/model-ja/" folder, ONTAMA will work. 
+If you want to change folder name, see how to build.
+
+### フォルダ・ファイル構成の概要   
+### Summary of folder and file structure   
 
 フォルダ・ファイル構成が正しいか確認するには，ontama.exe と vosk-model を選択肢して，右クリックで「プロパティ」を選択してください．
 プロパティが以下のとおりであれば，おそらく大丈夫です．
@@ -56,11 +103,20 @@ http://pro-video.jp/voice/announce/
 名前の後ろに「/」があるものはフォルダです．
 model-ja の下位フォルダの内容は省略しました．
 
+To check that the folder and file structure is correct, select ontama.exe and vosk-model, right-click and select 'Properties'.
+If the properties are as follows, you are probably OK.
+
+- Number of files: 30 (including README.md and README.pdf), number of folders: 8   
+- File size: 1.56 GB (may vary slightly depending on environment)   
+
+Folders are those with a '/' after the name.
+Contents of folders under model-en have been omitted.
+
 ```
 ontama/   
-  ├ ontama.exe  (実行フィル)   
-  ├ README.md   (本ファイル)   
-  └ manual.docx (画像付きの説明)   
+  ├ ontama.exe  (実行フィル execute file)   
+  ├ README.md   (本ファイル)   (this file)
+  └ manual.docx (画像付きの説明)   (Tutorial with images)
   └ vosk-model/   
       └─model-ja/   
           ├─am/   
@@ -71,7 +127,8 @@ ontama/
           └─README   
 ```
 
-## 使い方
+## 使い方   
+## How to use   
 
 1．ontama.exe をクリック．      
 2．黒い画面が現れ，少し待っているとメニューが現れる．   
@@ -88,7 +145,23 @@ ontama/
   4-4．終了するときは，[Ctrl] を押しながら [c] を押す．   
   4-5．ontama.exe と同じフォルダに「yyyy_mm_dd_hh_mm_ss.docx」(年_月_日_時_分_秒)と「yyyy_mm_dd_hh_mm_ss_plain.txt」というファイルが作成される．   
 
-## 出力ファイルの内容
+1. Click on ontama.exe.      
+2. A black screen appears, wait a moment and a menu will appear.     
+3. Select "File(wav, mp3, mp4)" if you want to recognise the sound in an audio or video file.    
+  3-1. A screen for selecting a file appears, select an audio or video file and click 'Open'.   
+  3-2. The black screen shows the progress of the various operations.    
+  3-3. "***.docx" and "***_plani.txt" files are created in the same folder as the file selected (*** is the same name as the input file). When mp3 and mp4 input, audio data in wav format "****.wav" will be generated (delete if unnecessary).   
+4. Select 'Microphone' if you want to recognise the sound input from the microphone of the PC.   
+  4-1. Wait for a while as various displays appear on the black screen.   
+  4-2. When the following appears on the black screen, input sound from the microphone.   
+    Recognising sound from microphone   
+    Press Ctrl+C to STOP   
+  4-3. The recognition results are displayed on the black screen.   
+  Press Ctrl+C to STOP 
+  4-4. The files "yyyy_mm_dd_hh_mm_ss.docx" (year_month_day_hour_minute_second) and "yyyy_mm_dd_hh_mm_ss_plain.txt" are created in the same folder as ontama.exe.   
+
+## 出力ファイルの内容   
+## Contents of output files   
 
 Wordファイル(.docx)とテキストファイル(.txt)の文字データ自体には違いはありません．
 Wordファイルの場合は，認識の信頼度によってフォントが異なります．
@@ -99,7 +172,17 @@ Wordファイルの場合は，認識の信頼度によってフォントが異�
 
 ただし，あくまでもプログラムが判定した信頼度であり，実際の音声との一致度ではありません．
 
-## 名前の由来
+There is no difference between the string data of a Word file (.docx) and a text file (.txt).
+In a Word file, the fonts differ according to the reliability of recognition.
+
+- High: Normal   
+- Medium: bold   
+- Low: Bold and underlined   
+
+However, this is only the confidence level determined by the programme, and not the actual speech match.
+
+
+## 名前の由来(Naming: Understandable only in Japanese)
 
 「おんたま」に大した意味はありません．
 温泉玉子は美味しいのと，なんとなく可愛らしい名前にしたかっただけです．
@@ -153,6 +236,19 @@ recog_mic.py
 voice_recog.py
 voice2docx.py
 ```
+
+### Modify codes (optional)
+
+If you want to change model folder, modify codes as bellow. 
+
+- recog_mic.py   
+- voice_recog.py   
+
+```
+model = Model("./vosk-model/model-ja")
+```
+
+You can change codes as you like.
 
 ### Vertial environment
 
