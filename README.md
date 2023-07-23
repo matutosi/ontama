@@ -83,15 +83,17 @@ Delete the folder to uninstall.
 
 ファイルのダウンロードと解凍・移動には時間がかかるので，コーヒーと本(あるいは他の仕事)などの準備がオススメです．
 
-1. ontama.exe を任意のフォルダに保存(ここでは「ontama」とする)．   
+1. (win) ontama.exe を任意のフォルダに保存(ここでは「ontama」とする)．   
    https://github.com/matutosi/ontama/raw/main/dist/ontama.exe   
+1. (mac) ontama をユーザのフォルダに保存(/Users/USERNAME/，USERNAMEはユーザ名)．   
+   https://github.com/matutosi/ontama/raw/main/dist/ontama   
 2. https://alphacephei.com/vosk/models から vosk-model-ja-0.xx.zip (xxはバージョン番号)をダウンロード．   
    vosk-model-ja-0.xx.zip   
    2023年7月現在の最新版  https://alphacephei.com/vosk/models/vosk-model-ja-0.22.zip   
    ダウンロードに結構な時間がかかるので，コーヒーを飲みながら(任意)しばらく待機．   
 3. ダウンロードしたzipファイルを解凍(ここでもしばらく待機)．   
   解凍してできたフォルダ内の「vosk-model-ja-0.xx」の名前を「model-ja」に変更．   
-4. ontama内 に vosk-model というフォルダを作成して，3の model-ja を vosk-model の中に全て移動．   
+4. ontamaフォルダ (mac: ユーザのフォルダ) に vosk-model というフォルダを作成して，3の model-ja を vosk-model の中に全て移動．   
   ここでもしばらく待機．   
 5. 全てのファイルがコピーされると完了．   
 
@@ -99,16 +101,18 @@ Delete the folder to uninstall.
 Downloading, unzipping and moving files takes some long time, 
 it is recommended to have coffee and a book (or other work) ready.
 
-1. Save ontama.exe in an arbitrary folder (in this case, "ontama").   
+1. (win) Save ontama.exe in an arbitrary folder (in this case, "ontama").   
    https://github.com/matutosi/ontama/raw/main/dist/ontama.exe   
+1. (mac) Save ontama in your user folder (/Users/USERNAME/，USERNAME is your username).   
+   https://github.com/matutosi/ontama/raw/main/dist/ontama   
 2. Download vosk-model-ja-0.xx.zip  or other language model (where xx is the version number) from https://alphacephei.com/vosk/models.   
    vosk-model-en-0.xx.zip   
    Latest version as of July 2023 https://alphacephei.com/vosk/models/vosk-model-ja-0.22.zip   
    The download takes quite a while, so have a cup of coffee (optional) and wait a while. 
 3. Unzip the downloaded zip file (again, wait a while).   
    Rename "vosk-model-ja-0.xx" to "model-ja" in the extracted folder.    
-4. Create a folder called vosk-model in ontama and move all the model-ja from into vosk-model folder.   
-  Again, wait for a while.    
+4. Create a folder named vosk-model in ontama folder (mac: your user folder) and move all the model-ja from into vosk-model folder.   
+   Again, wait for a while.    
 5. When all the files have been copied, it is complete.   
 
 ONTAMA use "./vosk-model/model-ja/" folder as model data regardless with the actual language that you use. 
