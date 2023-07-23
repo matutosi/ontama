@@ -94,18 +94,8 @@ Delete files to uninstall.
    2023年7月現在の最新版  https://alphacephei.com/vosk/models/vosk-model-ja-0.22.zip   
    ダウンロードに結構な時間がかかるので，コーヒーを飲みながら(任意)しばらく待機．   
 3. ダウンロードしたzipファイルを解凍(ここでもしばらく待機)．   
-   解凍してできたフォルダ内の「vosk-model-ja-0.xx」の名前を「model-ja」に変更．   
    <img src="img/ontama_unzip.png"       width="40%">
-   <img src="img/ontama_propaty.png"     width="80%">
-   <img src="img/ontama_menu.png"        width="80%">
-   <img src="img/ontama_menu_file.png"   width="60%">
-   <img src="img/ontama_file_prog.png"   width="80%">
-   <img src="img/ontama_file_finish.png" width="80%">
-   <img src="img/ontama_menu_mic.png"    width="60%">
-   <img src="img/ontama_select_file.png" width="80%">
-   <img src="img/ontama_mic_prog.png"    width="80%">
-   <img src="img/ontama_mic_finish.png"  width="80%">
-   <img src="img/ontama_word.png"        width="80%">
+   解凍してできたフォルダ内の「vosk-model-ja-0.xx」の名前を「model-ja」に変更．   
 4. ontamaフォルダ (mac: ユーザのフォルダ) に vosk-model というフォルダを作成して，3の model-ja を vosk-model の中に全て移動．   
   ここでもしばらく待機．   
 5. 全てのファイルがコピーされると完了．   
@@ -150,9 +140,10 @@ If the properties are as follows, you are probably OK.
 - Number of files: 30 (including README.md), number of folders: 8   
 - File size: 1.56 GB (may vary slightly depending on environment)   
 
-Folders are those with a '/' after the name.
+Folders are those with '/' after the name.
 Contents of folders under model-en have been omitted.
 
+   <img src="img/ontama_propaty.png"     width="80%">
 
 ```
 (win) ontama/   
@@ -180,21 +171,29 @@ Contents of folders under model-en have been omitted.
 
 1. ontama.exe (mac: ontama) をクリック．      
 2. 黒い画面(mac: 白い画面)が現れ，少し待っているとメニューが現れる．   
+   <img src="img/ontama_menu.png"        width="80%">
 3. 音声ファイルや動画ファイル内の音声を認識させる場合は，「File(wav, mp3, mp4)」を選択．   
+   <img src="img/ontama_menu_file.png"   width="40%">
   ***注意***   
-  mp3とmp4の入力はできません(他のソフトで事前にwavに変換してください)．   
+  (mac) mp3とmp4の入力はできません(他のソフトで事前にwavに変換してください)．   
   3-1. ファルを選択する画面がでるので，音声ファイルか動画ファイルを選択して，「開く」．   
+   <img src="img/ontama_select_file.png" width="60%">
   3-2. 2の黒い画面に，色々と実行経過が表示される．   
+   <img src="img/ontama_file_prog.png"   width="80%">
   3-3. 3-1で選択したファイルと同じフォルダに，「FILE.docx」「FILE_plani.txt」というファイルが作成される(FILEは入力したファイルと同じ名前)．mp3とmp4の入力時は，wav形式の音声データ「FILE.wav」が生成される(不要な場合は削除する)．   
+   <img src="img/ontama_file_finish.png" width="80%">
 4. パソコンのマイクから入力する音声を認識させる場合は，「Microphone」を選択．   
+   <img src="img/ontama_menu_mic.png"    width="40%">
   ***注意***   
   macでは結果が保存できない．   
   4-1. 2の黒い画面に色々と表示されるのでしばらく待つ．   
   4-2. 黒い画面に以下が表示されたら，マイクから音声を入力する．   
     Recognizing sound from microphone   
     Press Ctrl+C to STOP   
+   <img src="img/ontama_mic_prog.png"    width="80%">
   4-3. 認識結果が黒い画面に表示される．   
   4-4. 終了するときは，[Ctrl] を押しながら [c] を押す．   
+   <img src="img/ontama_mic_finish.png"  width="80%">
   4-5. ontama.exe と同じフォルダに「yyyy_mm_dd_hh_mm_ss.docx」(年_月_日_時_分_秒)と「yyyy_mm_dd_hh_mm_ss_plain.txt」というファイルが作成される．   
 
 
@@ -204,13 +203,13 @@ It is easy to use.
 2. A black (mac: whilte) screen appears, wait a moment and a menu will appear.     
 3. Select "File(wav, mp3, mp4)" if you want to recognise the sound in an audio or video file.    
   ***Warning***   
-   Can NOT input mp3 or mp4. Convert mp3 or mp4 into wav with other app.   
+  (mac) Can NOT input mp3 or mp4. Convert mp3 or mp4 into wav with other app.   
   3-1. A screen for selecting a file appears, select an audio or video file and click 'Open'.   
   3-2. The black screen shows the progress of the various operations.    
   3-3. "FILE.docx" and "FILE_plani.txt" files are created in the same folder as the file selected (FILE is the same name as the input file). When mp3 and mp4 input, audio data in wav format "FILE.wav" will be generated (delete if unnecessary).   
 4. Select 'Microphone' if you want to recognise the sound input from the microphone of the PC.   
   ***Warning***   
-  On mac, can NOT save results from microphone input.    
+  (mac) Can NOT save results from microphone input.    
   4-1. Wait for a while as various displays appear on the black screen.   
   4-2. When the following appears on the black screen, input sound from the microphone.   
     Recognising sound from microphone   
@@ -230,6 +229,8 @@ Wordファイルの場合は，認識の信頼度によってフォントが異�
 - 低：太字・下線   
 
 ただし，あくまでもプログラムが判定した信頼度であり，実際の音声との一致度ではありません．
+
+   <img src="img/ontama_word.png"        width="80%">
 
 There is no difference between the string data of a Word file (.docx) and a text file (.txt).
 In a Word file, the fonts differ according to the reliability of recognition.
