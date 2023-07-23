@@ -8,6 +8,7 @@
 Googleドキュメントの音声入力や Word for Web (Microsoft Office 365)のディクテーションでも音声認識は可能ですが，オンラインでないと使えません．
 通常の音声データであれば上記を使えば良いですが，何らかの事情でネットが使えないときや，極秘情報のため情報漏洩を防ぎたいときには，オフラインでの音声認識が必要です．
 そのような時，おんたまでのオフラインでの音声認識が可能です．
+音声や動画のファイルあるいはマイクの音声からのテキスト認識ができます．
 
 ONTAMA is a software for offline speech recognition (transcription) for Japanese. 
 You can change languege model by modifying Python code (see how to build). 
@@ -15,6 +16,7 @@ Speech recognition is also possible using Google Docs and MS Word for Web, but o
 Offline speech recognition is necessary when the internet is not available, 
 or when you want to prevent information leaks due to top secret. 
 In these cases, you can use Ontama for offline speech recognition. 
+Text recognition from audio or video files or microphone audio.
 
 おんたまは，Voskというオフラインの音声認識ソフトとPythonを利用して作成しました．
 
@@ -49,9 +51,16 @@ If you have any problems, please contact Matsumura (matutosi@konan-wu.ac.jp).
 ### USBメモリ等で ontama.exe と vosk-model (フォルダ) がまとめて配布されている場合
 ### If ontama.exe and vosk-model (folder) are distributed together on a USB memory stick, etc.
 
+ファイルの移動(コピー)だけで完了します．
+アンインストールはフォルダごと削除すればOKです．
+
 1. ontama.exe と vosk-model を任意のフォルダに保存(ここでは「ontama」とする)．   
 2. コピーに時間がかかるので，コーヒーを飲みながら(任意)しばらく待機．   
 3. 全てのファイルがコピーされると完了．   
+
+
+Simply move (copyi) the files.
+Delete the folder to uninstall.
 
 1. Save ontama.exe and vosk-model in an arbitrary folder (in this case, "ontama").   
 2. Wait for a while while drinking coffee (optional), as it takes time to copy the files.   
@@ -61,9 +70,6 @@ If you have any problems, please contact Matsumura (matutosi@konan-wu.ac.jp).
 ### Download ontama.exe and vosk-model from the Internet   
 
 ファイルのダウンロードと解凍・移動には時間がかかるので，コーヒーと本(あるいは他の仕事)などの準備がオススメです．
-
-Downloading, unzipping and moving files takes some long time, 
-it is recommended to have coffee and a book (or other work) ready.
 
 1. ontama.exe を任意のフォルダに保存(ここでは「ontama」とする)．   
    https://github.com/matutosi/ontama/raw/main/dist/ontama.exe   
@@ -76,6 +82,10 @@ it is recommended to have coffee and a book (or other work) ready.
 4. ontama内 に vosk-model というフォルダを作成して，3の model-ja を vosk-model の中に全て移動．   
   ここでもしばらく待機．   
 5. 全てのファイルがコピーされると完了．   
+
+
+Downloading, unzipping and moving files takes some long time, 
+it is recommended to have coffee and a book (or other work) ready.
 
 1. Save ontama.exe in an arbitrary folder (in this case, "ontama").   
    https://github.com/matutosi/ontama/raw/main/dist/ontama.exe   
@@ -132,6 +142,8 @@ ontama/
 ## 使い方   
 ## How to use   
 
+簡単な操作で使えます．
+
 1. ontama.exe をクリック．      
 2. 黒い画面が現れ，少し待っているとメニューが現れる．   
 3. 音声ファイルや動画ファイル内の音声を認識させる場合は，「File(wav, mp3, mp4)」を選択．   
@@ -147,6 +159,9 @@ ontama/
   4-4. 終了するときは，[Ctrl] を押しながら [c] を押す．   
   4-5. ontama.exe と同じフォルダに「yyyy_mm_dd_hh_mm_ss.docx」(年_月_日_時_分_秒)と「yyyy_mm_dd_hh_mm_ss_plain.txt」というファイルが作成される．   
 
+
+It is easy to use.
+
 1. Click on ontama.exe.      
 2. A black screen appears, wait a moment and a menu will appear.     
 3. Select "File(wav, mp3, mp4)" if you want to recognise the sound in an audio or video file.    
@@ -159,7 +174,7 @@ ontama/
     Recognising sound from microphone   
     Press Ctrl+C to STOP   
   4-3. The recognition results are displayed on the black screen.   
-  Press Ctrl+C to stop. 
+  Press Ctrl+C to stop.     
   4-4. The files "yyyy_mm_dd_hh_mm_ss.docx" (year_month_day_hour_minute_second) and "yyyy_mm_dd_hh_mm_ss_plain.txt" are created in the same folder as ontama.exe.   
 
 ## 出力ファイルの内容   
