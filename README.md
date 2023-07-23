@@ -50,7 +50,7 @@ http://pro-video.jp/voice/announce/
 フォルダ・ファイル構成が正しいか確認するには，ontama.exe と vosk-model を選択肢して，右クリックで「プロパティ」を選択してください．
 プロパティが以下のとおりであれば，おそらく大丈夫です．
 
-- ファイル数：30(README.txtとREADME.pdfを含む)，フォルダ数：8   
+- ファイル数：30(README.mdとREADME.pdfを含む)，フォルダ数：8   
 - ファイルサイズ1.56GB (環境によって多少の違いの可能性あり)   
 
 名前の後ろに「/」があるものはフォルダです．
@@ -58,9 +58,9 @@ model-ja の下位フォルダの内容は省略しました．
 
 ```
 ontama/   
-  ├ README.txt (本ファイル)   
-  ├ ontama.exe (実行フィル)   
-  └ manual.pdf (画像付きの説明)   
+  ├ ontama.exe  (実行フィル)   
+  ├ README.md   (本ファイル)   
+  └ manual.docx (画像付きの説明)   
   └ vosk-model/   
       └─model-ja/   
           ├─am/   
