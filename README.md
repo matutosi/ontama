@@ -4,11 +4,21 @@
 ## 「おんたま」とは   
 ## What is ONTAMA?   
 
+***注意***
+Macでは一部機能しか使えません．   
+- mp3とmp4の入力はできません(他のソフトで事前にwavに変換してください)．   
+- マイク入力は結果が保存できません．   
+
 「おんたま」は，オフラインで音声認識(文字起こし)をするためのソフトです．
 Googleドキュメントの音声入力や Word for Web (Microsoft Office 365)のディクテーションでも音声認識は可能ですが，オンラインでないと使えません．
 通常の音声データであれば上記を使えば良いですが，何らかの事情でネットが使えないときや，極秘情報のため情報漏洩を防ぎたいときには，オフラインでの音声認識が必要です．
 そのような時，おんたまでのオフラインでの音声認識が可能です．
 音声や動画のファイルあるいはマイクの音声からのテキスト認識ができます．
+
+***Warning***
+ONTAMA work partly on Macs
+- Can NOT input mp3 or mp4. Convert mp3 or mp4 into wav with other app.   
+- Can NOT save results from microphone input.
 
 ONTAMA is a software for offline speech recognition (transcription) for Japanese. 
 You can change languege model by modifying Python code (see how to build). 
@@ -48,13 +58,14 @@ If you have any problems, please contact Matsumura (matutosi@konan-wu.ac.jp).
 ## 導入方法   
 ## Installation   
 
-### USBメモリ等で ontama.exe と vosk-model (フォルダ) がまとめて配布されている場合
-### If ontama.exe and vosk-model (folder) are distributed together on a USB memory stick, etc.
+### USBメモリ等で ontama.exe (mac: ontama) と vosk-model がまとめて配布されている場合
+### If ontama.exe (mac: ontama) and vosk-model are distributed together on a USB memory stick, etc.
 
 ファイルの移動(コピー)だけで完了します．
 アンインストールはフォルダごと削除すればOKです．
 
-1. ontama.exe と vosk-model を任意のフォルダに保存(ここでは「ontama」とする)．   
+1. (win) ontama.exe と vosk-model を任意のフォルダに保存(ここでは「ontama」とする)．   
+1. (mac) ontama と vosk-model をユーザのフォルダに保存(/Users/USERNAME/，USERNAMEはユーザ名)．   
 2. コピーに時間がかかるので，コーヒーを飲みながら(任意)しばらく待機．   
 3. 全てのファイルがコピーされると完了．   
 
@@ -62,7 +73,8 @@ If you have any problems, please contact Matsumura (matutosi@konan-wu.ac.jp).
 Simply move (copyi) the files.
 Delete the folder to uninstall.
 
-1. Save ontama.exe and vosk-model in an arbitrary folder (in this case, "ontama").   
+1. (win) Save ontama.exe and vosk-model in an arbitrary folder (in this case, "ontama").   
+1. (mac) Save ontama and vosk-model in your folder (/Users/USERNAME/，USERNAME is your username)．   
 2. Wait for a while while drinking coffee (optional), as it takes time to copy the files.   
 3. When all files have been copied, it is complete.   
 
@@ -125,18 +137,22 @@ Folders are those with a '/' after the name.
 Contents of folders under model-en have been omitted.
 
 ```
-ontama/   
-  ├ ontama.exe  (実行フィル execute file)   
-  ├ README.md   (本ファイル)   (this file)
-  └ manual.docx (画像付きの説明)   (Tutorial with images only in Japanese)
-  └ vosk-model/   
-      └─model-ja/   
-          ├─am/   
-          ├─conf/   
-          ├─graph/   
-          ├─ivector/   
-          ├─rescore/   
-          └─README   
+(win) ontama/   
+    ├ ontama.exe  (実行フィル execute file)   
+    ├ README.md   (本ファイル)   (this file)
+    └ manual.docx (画像付きの説明)   (Tutorial with images only in Japanese)
+    └ vosk-model/   
+        └─model-ja/   
+            ├─am/   
+            ├─conf/   
+            ├─graph/   
+            ├─ivector/   
+            ├─rescore/   
+            └─README   
+
+(mac) /User/USERNAME/   
+    ├ ... (winと同じ, same as win)
+    ├ ... 
 ```
 
 ## 使い方   
@@ -144,13 +160,17 @@ ontama/
 
 簡単な操作で使えます．
 
-1. ontama.exe をクリック．      
-2. 黒い画面が現れ，少し待っているとメニューが現れる．   
+1. ontama.exe (mac: ontama) をクリック．      
+2. 黒い画面(mac: 白い画面)が現れ，少し待っているとメニューが現れる．   
 3. 音声ファイルや動画ファイル内の音声を認識させる場合は，「File(wav, mp3, mp4)」を選択．   
+  ***注意***   
+  mp3とmp4の入力はできません(他のソフトで事前にwavに変換してください)．   
   3-1. ファルを選択する画面がでるので，音声ファイルか動画ファイルを選択して，「開く」．   
   3-2. 2の黒い画面に，色々と実行経過が表示される．   
   3-3. 3-1で選択したファイルと同じフォルダに，「FILE.docx」「FILE_plani.txt」というファイルが作成される(FILEは入力したファイルと同じ名前)．mp3とmp4の入力時は，wav形式の音声データ「FILE.wav」が生成される(不要な場合は削除する)．   
 4. パソコンのマイクから入力する音声を認識させる場合は，「Microphone」を選択．   
+  ***注意***   
+  macでは結果が保存できない．   
   4-1. 2の黒い画面に色々と表示されるのでしばらく待つ．   
   4-2. 黒い画面に以下が表示されたら，マイクから音声を入力する．   
     Recognizing sound from microphone   
@@ -163,12 +183,16 @@ ontama/
 It is easy to use.
 
 1. Click on ontama.exe.      
-2. A black screen appears, wait a moment and a menu will appear.     
+2. A black (mac: whilte) screen appears, wait a moment and a menu will appear.     
 3. Select "File(wav, mp3, mp4)" if you want to recognise the sound in an audio or video file.    
+  ***Warning***   
+   Can NOT input mp3 or mp4. Convert mp3 or mp4 into wav with other app.   
   3-1. A screen for selecting a file appears, select an audio or video file and click 'Open'.   
   3-2. The black screen shows the progress of the various operations.    
   3-3. "FILE.docx" and "FILE_plani.txt" files are created in the same folder as the file selected (FILE is the same name as the input file). When mp3 and mp4 input, audio data in wav format "FILE.wav" will be generated (delete if unnecessary).   
 4. Select 'Microphone' if you want to recognise the sound input from the microphone of the PC.   
+  ***Warning***   
+  On mac, can NOT save results from microphone input.    
   4-1. Wait for a while as various displays appear on the black screen.   
   4-2. When the following appears on the black screen, input sound from the microphone.   
     Recognising sound from microphone   
@@ -261,23 +285,38 @@ You can change codes as you like.
 
 Opstional but RECOMMENDED to reduce exe file.
 
+(win)
 ```
-python -m venv vosk
-vosk\Scripts\Activate.ps1
+python -m venv ontama
+ontama\Scripts\Activate.ps1
+```
+
+(mac)
+```
+python -m venv ontama
+source ontama/bin/Activate
 ```
 
 ### Libraries
 
+(win and mac)
+
 ```
 python.exe -m pip install --upgrade pip
-pip install python-docx
-pip install vosk
-pip install soundcard
-pip install sounddevice
-pip install pyinstaller
 pip install ffmpeg-python
 pip install pyinstaller
+pip install python-docx
+pip install soundcard
+pip install sounddevice
+pip install vosk
 ```
+
+(mac) When installed Python with homebrew.
+
+```
+brew install python-tk
+```
+
 
 ### pyinstaller
 
@@ -291,7 +330,9 @@ Modify data setting in recog_main.spec file.
 
 ```
 before: datas = [],
-after : datas = [('SET_YOUR_PATH\\ontama\\Lib\\site-packages\\vosk', './vosk')],
+after : datas = [('SET_YOUR_PATH', './vosk')],
+(win_ex) : datas = [('c:\\..\\ontama\\Lib\\site-packages\\vosk', './vosk')],
+(mac_ex) : datas = [('/Users/../ontama/lib/python3.10/site-packages/vosk', './vosk')],
 ```
 
 Create exe file.
