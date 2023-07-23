@@ -95,17 +95,17 @@ Delete files to uninstall.
    ダウンロードに結構な時間がかかるので，コーヒーを飲みながら(任意)しばらく待機．   
 3. ダウンロードしたzipファイルを解凍(ここでもしばらく待機)．   
    解凍してできたフォルダ内の「vosk-model-ja-0.xx」の名前を「model-ja」に変更．   
-   ![](img/ontama_unzip.png){ width=40% }    
-   ![](img/ontama_propaty.png){ width=80% }    
-   ![](img/ontama_menu.png){ width=80% }    
-   ![](img/ontama_menu_file.png){ width=0% }    
-   ![](img/ontama_file_prog.png){ width=0% }    
-   ![](img/ontama_file_finish.png){ width=0% }    
-   ![](img/ontama_select_file.png){ width=0% }    
-   ![](img/ontama_menu_mic.png){ width=0% }    
-   ![](img/ontama_mic_finish.png){ width=0% }    
-   ![](img/ontama_mic_prog.png){ width=0% }    
-   ![](img/ontama_word.png){ width=0% }    
+   <img src="img/ontama_unzip.png"       width="40%">
+   <img src="img/ontama_propaty.png"     width="80%">
+   <img src="img/ontama_menu.png"        width="80%">
+   <img src="img/ontama_menu_file.png"   width="60%">
+   <img src="img/ontama_file_prog.png"   width="80%">
+   <img src="img/ontama_file_finish.png" width="80%">
+   <img src="img/ontama_menu_mic.png"    width="60%">
+   <img src="img/ontama_select_file.png" width="80%">
+   <img src="img/ontama_mic_prog.png"    width="80%">
+   <img src="img/ontama_mic_finish.png"  width="80%">
+   <img src="img/ontama_word.png"        width="80%">
 4. ontamaフォルダ (mac: ユーザのフォルダ) に vosk-model というフォルダを作成して，3の model-ja を vosk-model の中に全て移動．   
   ここでもしばらく待機．   
 5. 全てのファイルがコピーされると完了．   
