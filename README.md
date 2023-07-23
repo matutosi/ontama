@@ -5,7 +5,8 @@
 ## What is ONTAMA?   
 
 ***注意***
-Macでは一部機能しか使えません．   
+Mac では一部機能しか使えません．
+また，M1，M2のMacではPythonを使うか，自分でビルドする必要があります．   
 - mp3とmp4の入力はできません(他のソフトで事前にwavに変換してください)．   
 - マイク入力は結果が保存できません．   
 
@@ -17,6 +18,7 @@ Googleドキュメントの音声入力や Word for Web (Microsoft Office 365)�
 
 ***Warning***
 ONTAMA work partly on Macs
+On M1，M2 Mac Use Python or build by your self.     
 - Can NOT input mp3 or mp4. Convert mp3 or mp4 into wav with other app.   
 - Can NOT save results from microphone input.
 
@@ -70,8 +72,8 @@ If you have any problems, please contact Matsumura (matutosi@konan-wu.ac.jp).
 3. 全てのファイルがコピーされると完了．   
 
 
-Simply move (copyi) the files.
-Delete the folder to uninstall.
+Move (copy) files.
+Delete files to uninstall.
 
 1. (win) Save ontama.exe and vosk-model in an arbitrary folder (in this case, "ontama").   
 1. (mac) Save ontama and vosk-model in your folder (/Users/USERNAME/，USERNAME is your username)．   
@@ -92,7 +94,18 @@ Delete the folder to uninstall.
    2023年7月現在の最新版  https://alphacephei.com/vosk/models/vosk-model-ja-0.22.zip   
    ダウンロードに結構な時間がかかるので，コーヒーを飲みながら(任意)しばらく待機．   
 3. ダウンロードしたzipファイルを解凍(ここでもしばらく待機)．   
-  解凍してできたフォルダ内の「vosk-model-ja-0.xx」の名前を「model-ja」に変更．   
+   解凍してできたフォルダ内の「vosk-model-ja-0.xx」の名前を「model-ja」に変更．   
+   ![](img/ontama_unzip.png){ width=40% }    
+   ![](img/ontama_propaty.png){ width=80% }    
+   ![](img/ontama_menu.png){ width=80% }    
+   ![](img/ontama_menu_file.png){ width=0% }    
+   ![](img/ontama_file_prog.png){ width=0% }    
+   ![](img/ontama_file_finish.png){ width=0% }    
+   ![](img/ontama_select_file.png){ width=0% }    
+   ![](img/ontama_menu_mic.png){ width=0% }    
+   ![](img/ontama_mic_finish.png){ width=0% }    
+   ![](img/ontama_mic_prog.png){ width=0% }    
+   ![](img/ontama_word.png){ width=0% }    
 4. ontamaフォルダ (mac: ユーザのフォルダ) に vosk-model というフォルダを作成して，3の model-ja を vosk-model の中に全て移動．   
   ここでもしばらく待機．   
 5. 全てのファイルがコピーされると完了．   
@@ -125,7 +138,7 @@ If you want to change folder name, see how to build.
 フォルダ・ファイル構成が正しいか確認するには，ontama.exe と vosk-model を選択肢して，右クリックで「プロパティ」を選択してください．
 プロパティが以下のとおりであれば，おそらく大丈夫です．
 
-- ファイル数：30(README.mdとREADME.pdfを含む)，フォルダ数：8   
+- ファイル数：30(README.mdを含む)，フォルダ数：8   
 - ファイルサイズ1.56GB (環境によって多少の違いの可能性あり)   
 
 名前の後ろに「/」があるものはフォルダです．
@@ -134,17 +147,18 @@ model-ja の下位フォルダの内容は省略しました．
 To check that the folder and file structure is correct, select ontama.exe and vosk-model, right-click and select 'Properties'.
 If the properties are as follows, you are probably OK.
 
-- Number of files: 30 (including README.md and README.pdf), number of folders: 8   
+- Number of files: 30 (including README.md), number of folders: 8   
 - File size: 1.56 GB (may vary slightly depending on environment)   
 
 Folders are those with a '/' after the name.
 Contents of folders under model-en have been omitted.
 
+
 ```
 (win) ontama/   
-    ├ ontama.exe  (実行フィル execute file)   
+    ├ ontama.exe  (実行フィル execute file for win)   
+    ├ ontama      (実行フィル execute file for mac)   
     ├ README.md   (本ファイル)   (this file)
-    └ manual.docx (画像付きの説明)   (Tutorial with images only in Japanese)
     └ vosk-model/   
         └─model-ja/   
             ├─am/   
@@ -250,7 +264,7 @@ https://qiita.com/3998/items/fe7bf6f0a3be20cafdd8
 https://qiita.com/ShogoMatsumoto/items/73c494c15123f1084d67#pc
 
 
-## Use on python
+## Use on python (>= 3.9.0)
 
 ### Clone ontama
 
@@ -264,7 +278,7 @@ git clone https://github.com/matutosi/ontama
 python recog_main.py
 ```
 
-## How to build ontama
+## How to build ontama with Python
 
 ### Clone ontama
 
