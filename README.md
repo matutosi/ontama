@@ -116,7 +116,7 @@ Contents of folders under model-en have been omitted.
 ontama/   
   ├ ontama.exe  (実行フィル execute file)   
   ├ README.md   (本ファイル)   (this file)
-  └ manual.docx (画像付きの説明)   (Tutorial with images)
+  └ manual.docx (画像付きの説明)   (Tutorial with images only in Japanese)
   └ vosk-model/   
       └─model-ja/   
           ├─am/   
