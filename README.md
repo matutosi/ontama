@@ -76,7 +76,7 @@ Move (copy) files.
 Delete files to uninstall.
 
 1. (win) Save ontama.exe and vosk-model in an arbitrary folder (in this case, "ontama").   
-1. (mac) Save ontama and vosk-model in your folder (/Users/USERNAME/，USERNAME is your username)．   
+1. (mac) Save ontama and vosk-model in your user folder (/Users/USERNAME/，USERNAME is your username)．   
 2. Wait for a while while drinking coffee (optional), as it takes time to copy the files.   
 3. When all files have been copied, it is complete.   
 
@@ -94,7 +94,7 @@ Delete files to uninstall.
    2023年7月現在の最新版  https://alphacephei.com/vosk/models/vosk-model-ja-0.22.zip   
    ダウンロードに結構な時間がかかるので，コーヒーを飲みながら(任意)しばらく待機．   
 3. ダウンロードしたzipファイルを解凍(ここでもしばらく待機)．   
-   <img src="img/ontama_unzip.png"       width="40%">
+   <img src="img/ontama_unzip.png"       width="40%">    
    解凍してできたフォルダ内の「vosk-model-ja-0.xx」の名前を「model-ja」に変更．   
 4. ontamaフォルダ (mac: ユーザのフォルダ) に vosk-model というフォルダを作成して，3の model-ja を vosk-model の中に全て移動．   
   ここでもしばらく待機．   
@@ -128,8 +128,8 @@ If you want to change folder name, see how to build.
 フォルダ・ファイル構成が正しいか確認するには，ontama.exe と vosk-model を選択肢して，右クリックで「プロパティ」を選択してください．
 プロパティが以下のとおりであれば，おそらく大丈夫です．
 
-- ファイル数：30(README.mdを含む)，フォルダ数：8   
-- ファイルサイズ1.56GB (環境によって多少の違いの可能性あり)   
+- ファイル数：42 (README.mdを含む)，フォルダ数：9   
+- ファイルサイズ1.60GB (環境によって多少の違いの可能性あり)   
 
 名前の後ろに「/」があるものはフォルダです．
 model-ja の下位フォルダの内容は省略しました．
@@ -137,19 +137,20 @@ model-ja の下位フォルダの内容は省略しました．
 To check that the folder and file structure is correct, select ontama.exe and vosk-model, right-click and select 'Properties'.
 If the properties are as follows, you are probably OK.
 
-- Number of files: 30 (including README.md), number of folders: 8   
-- File size: 1.56 GB (may vary slightly depending on environment)   
+- Number of files: 42, number of folders: 9   
+- File size: 1.60 GB (may vary slightly depending on your environment)   
 
 Folders are those with '/' after the name.
 Contents of folders under model-en have been omitted.
 
-   <img src="img/ontama_propaty.png"     width="80%">
+   <img src="img/ontama_propaty.png"     width="80%">    
 
 ```
 (win) ontama/   
     ├ ontama.exe  (実行フィル execute file for win)   
     ├ ontama      (実行フィル execute file for mac)   
     ├ README.md   (本ファイル)   (this file)
+    └ img/   
     └ vosk-model/   
         └─model-ja/   
             ├─am/   
@@ -171,29 +172,31 @@ Contents of folders under model-en have been omitted.
 
 1. ontama.exe (mac: ontama) をクリック．      
 2. 黒い画面(mac: 白い画面)が現れ，少し待っているとメニューが現れる．   
-   <img src="img/ontama_menu.png"        width="80%">
+   <img src="img/ontama_menu.png"        width="80%">    
 3. 音声ファイルや動画ファイル内の音声を認識させる場合は，「File(wav, mp3, mp4)」を選択．   
-   <img src="img/ontama_menu_file.png"   width="40%">
+   <img src="img/ontama_menu_file.png"   width="40%">    
   ***注意***   
   (mac) mp3とmp4の入力はできません(他のソフトで事前にwavに変換してください)．   
   3-1. ファルを選択する画面がでるので，音声ファイルか動画ファイルを選択して，「開く」．   
-   <img src="img/ontama_select_file.png" width="60%">
+   <img src="img/ontama_select_file.png" width="60%">    
   3-2. 2の黒い画面に，色々と実行経過が表示される．   
-   <img src="img/ontama_file_prog.png"   width="80%">
+   <img src="img/ontama_file_prog.png"   width="80%">    
   3-3. 3-1で選択したファイルと同じフォルダに，「FILE.docx」「FILE_plani.txt」というファイルが作成される(FILEは入力したファイルと同じ名前)．mp3とmp4の入力時は，wav形式の音声データ「FILE.wav」が生成される(不要な場合は削除する)．   
-   <img src="img/ontama_file_finish.png" width="80%">
+   <img src="img/ontama_file_finish.png" width="80%">    
 4. パソコンのマイクから入力する音声を認識させる場合は，「Microphone」を選択．   
-   <img src="img/ontama_menu_mic.png"    width="40%">
+   <img src="img/ontama_menu_mic.png"    width="40%">    
   ***注意***   
   macでは結果が保存できない．   
   4-1. 2の黒い画面に色々と表示されるのでしばらく待つ．   
   4-2. 黒い画面に以下が表示されたら，マイクから音声を入力する．   
     Recognizing sound from microphone   
     Press Ctrl+C to STOP   
-   <img src="img/ontama_mic_prog.png"    width="80%">
+   <img src="img/ontama_mic_prepare.png"  width="80%">    
   4-3. 認識結果が黒い画面に表示される．   
+  以下の画像の「音声 認識 システム 音 玉」は自動的に表示されるものではなく，マイク音声の認識結果です．   
+   <img src="img/ontama_mic_prog.png"    width="80%">    
   4-4. 終了するときは，[Ctrl] を押しながら [c] を押す．   
-   <img src="img/ontama_mic_finish.png"  width="80%">
+   <img src="img/ontama_mic_finish.png"  width="80%">    
   4-5. ontama.exe と同じフォルダに「yyyy_mm_dd_hh_mm_ss.docx」(年_月_日_時_分_秒)と「yyyy_mm_dd_hh_mm_ss_plain.txt」というファイルが作成される．   
 
 
@@ -230,7 +233,7 @@ Wordファイルの場合は，認識の信頼度によってフォントが異�
 
 ただし，あくまでもプログラムが判定した信頼度であり，実際の音声との一致度ではありません．
 
-   <img src="img/ontama_word.png"        width="80%">
+   <img src="img/ontama_word.png"        width="100%">
 
 There is no difference between the string data of a Word file (.docx) and a text file (.txt).
 In a Word file, the fonts differ according to the reliability of recognition.
