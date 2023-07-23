@@ -49,9 +49,9 @@ If you have any problems, please contact Matsumura (matutosi@konan-wu.ac.jp).
 ### USBメモリ等で ontama.exe と vosk-model (フォルダ) がまとめて配布されている場合
 ### If ontama.exe and vosk-model (folder) are distributed together on a USB memory stick, etc.
 
-1．ontama.exe と vosk-model を任意のフォルダに保存(ここでは「ontama」とする)．   
-2．コピーに時間がかかるので，コーヒーを飲みながら(任意)しばらく待機．   
-3．全てのファイルがコピーされると完了．   
+1. ontama.exe と vosk-model を任意のフォルダに保存(ここでは「ontama」とする)．   
+2. コピーに時間がかかるので，コーヒーを飲みながら(任意)しばらく待機．   
+3. 全てのファイルがコピーされると完了．   
 
 1. Save ontama.exe and vosk-model in an arbitrary folder (in this case, "ontama").   
 2. Wait for a while while drinking coffee (optional), as it takes time to copy the files.   
@@ -65,19 +65,21 @@ If you have any problems, please contact Matsumura (matutosi@konan-wu.ac.jp).
 Downloading, unzipping and moving files takes some long time, 
 it is recommended to have coffee and a book (or other work) ready.
 
-1．ontama.exe を任意のフォルダに保存(ここでは「ontama」とする)．   
-2．https://alphacephei.com/vosk/models から vosk-model-ja-0.xx.zip (xxはバージョン番号)をダウンロード．   
+1. ontama.exe を任意のフォルダに保存(ここでは「ontama」とする)．   
+   https://github.com/matutosi/ontama/raw/main/dist/ontama.exe   
+2. https://alphacephei.com/vosk/models から vosk-model-ja-0.xx.zip (xxはバージョン番号)をダウンロード．   
    vosk-model-ja-0.xx.zip   
    2023年7月現在の最新版  https://alphacephei.com/vosk/models/vosk-model-ja-0.22.zip   
    ダウンロードに結構な時間がかかるので，コーヒーを飲みながら(任意)しばらく待機．   
-3．ダウンロードしたzipファイルを解凍(ここでもしばらく待機)．   
+3. ダウンロードしたzipファイルを解凍(ここでもしばらく待機)．   
   解凍してできたフォルダ内の「vosk-model-ja-0.xx」の名前を「model-ja」に変更．   
-4．ontama内 に vosk-model というフォルダを作成して，3の model-ja を vosk-model の中に全て移動．   
+4. ontama内 に vosk-model というフォルダを作成して，3の model-ja を vosk-model の中に全て移動．   
   ここでもしばらく待機．   
-5．全てのファイルがコピーされると完了．   
+5. 全てのファイルがコピーされると完了．   
 
-1．Save ontama.exe in an arbitrary folder (in this case, "ontama").   
-Download vosk-model-ja-0.xx.zip  or other language model (where xx is the version number) from https://alphacephei.com/vosk/models.   
+1. Save ontama.exe in an arbitrary folder (in this case, "ontama").   
+   https://github.com/matutosi/ontama/raw/main/dist/ontama.exe   
+2. Download vosk-model-ja-0.xx.zip  or other language model (where xx is the version number) from https://alphacephei.com/vosk/models.   
    vosk-model-en-0.xx.zip   
    Latest version as of July 2023 https://alphacephei.com/vosk/models/vosk-model-ja-0.22.zip   
    The download takes quite a while, so have a cup of coffee (optional) and wait a while. 
@@ -130,20 +132,20 @@ ontama/
 ## 使い方   
 ## How to use   
 
-1．ontama.exe をクリック．      
-2．黒い画面が現れ，少し待っているとメニューが現れる．   
-3．音声ファイルや動画ファイル内の音声を認識させる場合は，「File(wav, mp3, mp4)」を選択．   
-  3-1．ファルを選択する画面がでるので，音声ファイルか動画ファイルを選択して，「開く」．   
-  3-2．2の黒い画面に，色々と実行経過が表示される．   
-  3-3．3-1で選択したファイルと同じフォルダに，「FILE.docx」「FILE_plani.txt」というファイルが作成される(FILEは入力したファイルと同じ名前)．mp3とmp4の入力時は，wav形式の音声データ「FILE.wav」が生成される(不要な場合は削除する)．   
-4．パソコンのマイクから入力する音声を認識させる場合は，「Microphone」を選択．   
-  4-1．2の黒い画面に色々と表示されるのでしばらく待つ．   
-  4-2．黒い画面に以下が表示されたら，マイクから音声を入力する．   
+1. ontama.exe をクリック．      
+2. 黒い画面が現れ，少し待っているとメニューが現れる．   
+3. 音声ファイルや動画ファイル内の音声を認識させる場合は，「File(wav, mp3, mp4)」を選択．   
+  3-1. ファルを選択する画面がでるので，音声ファイルか動画ファイルを選択して，「開く」．   
+  3-2. 2の黒い画面に，色々と実行経過が表示される．   
+  3-3. 3-1で選択したファイルと同じフォルダに，「FILE.docx」「FILE_plani.txt」というファイルが作成される(FILEは入力したファイルと同じ名前)．mp3とmp4の入力時は，wav形式の音声データ「FILE.wav」が生成される(不要な場合は削除する)．   
+4. パソコンのマイクから入力する音声を認識させる場合は，「Microphone」を選択．   
+  4-1. 2の黒い画面に色々と表示されるのでしばらく待つ．   
+  4-2. 黒い画面に以下が表示されたら，マイクから音声を入力する．   
     Recognizing sound from microphone   
     Press Ctrl+C to STOP   
-  4-3．認識結果が黒い画面に表示される．   
-  4-4．終了するときは，[Ctrl] を押しながら [c] を押す．   
-  4-5．ontama.exe と同じフォルダに「yyyy_mm_dd_hh_mm_ss.docx」(年_月_日_時_分_秒)と「yyyy_mm_dd_hh_mm_ss_plain.txt」というファイルが作成される．   
+  4-3. 認識結果が黒い画面に表示される．   
+  4-4. 終了するときは，[Ctrl] を押しながら [c] を押す．   
+  4-5. ontama.exe と同じフォルダに「yyyy_mm_dd_hh_mm_ss.docx」(年_月_日_時_分_秒)と「yyyy_mm_dd_hh_mm_ss_plain.txt」というファイルが作成される．   
 
 1. Click on ontama.exe.      
 2. A black screen appears, wait a moment and a menu will appear.     
@@ -207,15 +209,10 @@ https://qiita.com/ShogoMatsumoto/items/73c494c15123f1084d67#pc
 
 ## Use on python
 
-### Download files
+### Clone ontama
 
 ```
-mpx2wav.py
-recog_file.py
-recog_main.py
-recog_mic.py
-voice_recog.py
-voice2docx.py
+git clone https://github.com/matutosi/ontama
 ```
 
 ### Run
@@ -226,15 +223,10 @@ python recog_main.py
 
 ## How to build ontama
 
-### Download files
+### Clone ontama
 
 ```
-mpx2wav.py
-recog_file.py
-recog_main.py
-recog_mic.py
-voice_recog.py
-voice2docx.py
+git clone https://github.com/matutosi/ontama
 ```
 
 ### Modify codes (optional)
