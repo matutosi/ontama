@@ -135,7 +135,7 @@ ontama/
 3．音声ファイルや動画ファイル内の音声を認識させる場合は，「File(wav, mp3, mp4)」を選択．   
   3-1．ファルを選択する画面がでるので，音声ファイルか動画ファイルを選択して，「開く」．   
   3-2．2の黒い画面に，色々と実行経過が表示される．   
-  3-3．3-1で選択したファイルと同じフォルダに，「*.docx」「*_plani.txt」というファイルが作成される(*は入力したファイルと同じ名前)．mp3とmp4の入力時は，wav形式の音声データ「*.wav」が生成される(不要な場合は削除する)．   
+  3-3．3-1で選択したファイルと同じフォルダに，「FILE.docx」「FILE_plani.txt」というファイルが作成される(FILEは入力したファイルと同じ名前)．mp3とmp4の入力時は，wav形式の音声データ「FILE.wav」が生成される(不要な場合は削除する)．   
 4．パソコンのマイクから入力する音声を認識させる場合は，「Microphone」を選択．   
   4-1．2の黒い画面に色々と表示されるのでしばらく待つ．   
   4-2．黒い画面に以下が表示されたら，マイクから音声を入力する．   
@@ -150,7 +150,7 @@ ontama/
 3. Select "File(wav, mp3, mp4)" if you want to recognise the sound in an audio or video file.    
   3-1. A screen for selecting a file appears, select an audio or video file and click 'Open'.   
   3-2. The black screen shows the progress of the various operations.    
-  3-3. "*.docx" and "*_plani.txt" files are created in the same folder as the file selected (* is the same name as the input file). When mp3 and mp4 input, audio data in wav format "*.wav" will be generated (delete if unnecessary).   
+  3-3. "FILE.docx" and "FILE_plani.txt" files are created in the same folder as the file selected (FILE is the same name as the input file). When mp3 and mp4 input, audio data in wav format "FILE.wav" will be generated (delete if unnecessary).   
 4. Select 'Microphone' if you want to recognise the sound input from the microphone of the PC.   
   4-1. Wait for a while as various displays appear on the black screen.   
   4-2. When the following appears on the black screen, input sound from the microphone.   
