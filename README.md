@@ -4,11 +4,10 @@
 ## 「おんたま」とは   
 ## What is ONTAMA?   
 
-***注意***
-Mac では一部機能しか使えません．
-また，M1，M2のMacではPythonを使うか，自分でビルドする必要があります．   
-- mp3とmp4の入力はできません(他のソフトで事前にwavに変換してください)．   
-- マイク入力は結果が保存できません．   
+**注意**
+Win10とMac (intel cpu) では一部機能しか使えません．Mac (M1, M2)では，Pythonを使うか，自分でビルドする必要があります．   
+- (win10, mac) mp3とmp4の入力はできません(他のソフトで事前にwavに変換してください)．   
+- (mac) マイク入力は結果が保存できません．   
 
 「おんたま」は，オフラインで音声認識(文字起こし)をするためのソフトです．
 Googleドキュメントの音声入力や Word for Web (Microsoft Office 365)のディクテーションでも音声認識は可能ですが，オンラインでないと使えません．
@@ -16,11 +15,10 @@ Googleドキュメントの音声入力や Word for Web (Microsoft Office 365)�
 そのような時，おんたまでのオフラインでの音声認識が可能です．
 音声や動画のファイルあるいはマイクの音声からのテキスト認識ができます．
 
-***Warning***
-ONTAMA work partly on Macs
-On M1，M2 Mac Use Python or build by your self.     
-- Can NOT input mp3 or mp4. Convert mp3 or mp4 into wav with other app.   
-- Can NOT save results from microphone input.
+**WARNING**
+ONTAMA work partly on Win 10 and Mac (intel cpu).On M1 or M2 Mac, use Python or build by your self.    
+- (win10, mac) Can NOT input mp3 or mp4. Convert mp3 or mp4 into wav with other app.   
+- (mac) Can NOT save results from microphone input.
 
 ONTAMA is a software for offline speech recognition (transcription) for Japanese. 
 You can change languege model by modifying Python code (see how to build). 
@@ -125,32 +123,19 @@ If you want to change folder name, see how to build.
 ### フォルダ・ファイル構成の概要   
 ### Summary of folder and file structure   
 
-フォルダ・ファイル構成が正しいか確認するには，ontama.exe と vosk-model を選択肢して，右クリックで「プロパティ」を選択してください．
-プロパティが以下のとおりであれば，おそらく大丈夫です．
-
-- ファイル数：42 (README.mdを含む)，フォルダ数：9   
-- ファイルサイズ1.60GB (環境によって多少の違いの可能性あり)   
+念のため，フォルダ・ファイル構成が正しいか確認すると良いです．
 
 名前の後ろに「/」があるものはフォルダです．
 model-ja の下位フォルダの内容は省略しました．
 
-To check that the folder and file structure is correct, select ontama.exe and vosk-model, right-click and select 'Properties'.
-If the properties are as follows, you are probably OK.
-
-- Number of files: 42, number of folders: 9   
-- File size: 1.60 GB (may vary slightly depending on your environment)   
-
+It is better to check if the folder and file structure is correct. 
 Folders are those with '/' after the name.
-Contents of folders under model-en have been omitted.
-
-   <img src="img/ontama_propaty.png"     width="80%">    
+Details are omitted.
 
 ```
 (win) ontama/   
-    ├ ontama.exe  (実行フィル execute file for win)   
-    ├ ontama      (実行フィル execute file for mac)   
-    ├ README.md   (本ファイル)   (this file)
-    └ img/   
+    ├ ontama.exe  (実行ファイル execute file for win)   
+    ├ ontama      (実行ファイル execute file for mac)   
     └ vosk-model/   
         └─model-ja/   
             ├─am/   
@@ -161,8 +146,16 @@ Contents of folders under model-en have been omitted.
             └─README   
 
 (mac) /User/USERNAME/   
-    ├ ... (winと同じ, same as win)
-    ├ ... 
+    ├ ontama      (実行ファイル execute file for mac)   
+    ├ ontama.exe  (実行ファイル execute file for win)   
+    └ vosk-model/   
+        └─model-ja/   
+            ├─am/   
+            ├─conf/   
+            ├─graph/   
+            ├─ivector/   
+            ├─rescore/   
+            └─README   
 ```
 
 ## 使い方   
@@ -174,9 +167,9 @@ Contents of folders under model-en have been omitted.
 2. 黒い画面(mac: 白い画面)が現れ，少し待っているとメニューが現れる．   
    <img src="img/ontama_menu.png"        width="80%">    
 3. 音声ファイルや動画ファイル内の音声を認識させる場合は，「File(wav, mp3, mp4)」を選択．   
+  **注意**
+  (win10, mac) mp3とmp4の入力はできません(他のソフトで事前にwavに変換してください)．   
    <img src="img/ontama_menu_file.png"   width="40%">    
-  ***注意***   
-  (mac) mp3とmp4の入力はできません(他のソフトで事前にwavに変換してください)．   
   3-1. ファルを選択する画面がでるので，音声ファイルか動画ファイルを選択して，「開く」．   
    <img src="img/ontama_select_file.png" width="60%">    
   3-2. 2の黒い画面に，色々と実行経過が表示される．   
@@ -184,9 +177,9 @@ Contents of folders under model-en have been omitted.
   3-3. 3-1で選択したファイルと同じフォルダに，「FILE.docx」「FILE_plani.txt」というファイルが作成される(FILEは入力したファイルと同じ名前)．mp3とmp4の入力時は，wav形式の音声データ「FILE.wav」が生成される(不要な場合は削除する)．   
    <img src="img/ontama_file_finish.png" width="80%">    
 4. パソコンのマイクから入力する音声を認識させる場合は，「Microphone」を選択．   
-   <img src="img/ontama_menu_mic.png"    width="40%">    
-  ***注意***   
+  **注意**
   macでは結果が保存できない．   
+   <img src="img/ontama_menu_mic.png"    width="40%">    
   4-1. 2の黒い画面に色々と表示されるのでしばらく待つ．   
   4-2. 黒い画面に以下が表示されたら，マイクから音声を入力する．   
     Recognizing sound from microphone   
@@ -205,13 +198,13 @@ It is easy to use.
 1. Click on ontama.exe.      
 2. A black (mac: whilte) screen appears, wait a moment and a menu will appear.     
 3. Select "File(wav, mp3, mp4)" if you want to recognise the sound in an audio or video file.    
-  ***Warning***   
-  (mac) Can NOT input mp3 or mp4. Convert mp3 or mp4 into wav with other app.   
+  **WARNING**
+  (win10, mac) Can NOT input mp3 or mp4. Convert mp3 or mp4 into wav with other app.   
   3-1. A screen for selecting a file appears, select an audio or video file and click 'Open'.   
   3-2. The black screen shows the progress of the various operations.    
   3-3. "FILE.docx" and "FILE_plani.txt" files are created in the same folder as the file selected (FILE is the same name as the input file). When mp3 and mp4 input, audio data in wav format "FILE.wav" will be generated (delete if unnecessary).   
 4. Select 'Microphone' if you want to recognise the sound input from the microphone of the PC.   
-  ***Warning***   
+  **WARNING**
   (mac) Can NOT save results from microphone input.    
   4-1. Wait for a while as various displays appear on the black screen.   
   4-2. When the following appears on the black screen, input sound from the microphone.   
@@ -228,8 +221,8 @@ Wordファイル(.docx)とテキストファイル(.txt)の文字データ自体
 Wordファイルの場合は，認識の信頼度によってフォントが異なります．
 
 - 高：通常   
-- 中：太字   
-- 低：太字・下線   
+- **中：太字**   
+- __**低：太字・下線**__   
 
 ただし，あくまでもプログラムが判定した信頼度であり，実際の音声との一致度ではありません．
 
@@ -239,8 +232,8 @@ There is no difference between the string data of a Word file (.docx) and a text
 In a Word file, the fonts differ according to the reliability of recognition.
 
 - High: Normal   
-- Medium: bold   
-- Low: Bold and underlined   
+- **Medium: bold**   
+- __**Low: Bold and underlined**__   
 
 However, this is only the confidence level determined by the programme, and not the actual speech match.
 
@@ -292,7 +285,7 @@ git clone https://github.com/matutosi/ontama
 
 ### Modify codes (optional)
 
-If you want to change model folder, modify codes as bellow. 
+If you want to change language model, modify codes as bellow. 
 
 - recog_mic.py   
 - voice_recog.py   
@@ -301,11 +294,12 @@ If you want to change model folder, modify codes as bellow.
 model = Model("./vosk-model/model-ja")
 ```
 
-You can change codes as you like.
+You can change other codes as you like.
+
 
 ### Vertial environment
 
-Opstional but RECOMMENDED to reduce exe file.
+Opstional but RECOMMENDED to reduce execute file.
 
 (win)
 ```
@@ -342,7 +336,7 @@ brew install python-tk
 
 ### pyinstaller
 
-Create setting file (spec) by filepyi-makespec.
+Create setting file (spec).
 
 ```
 pyi-makespec recog_main.py -n ontama --onefile
@@ -353,12 +347,14 @@ Modify data setting in recog_main.spec file.
 ```
 before: datas = [],
 after : datas = [('SET_YOUR_PATH', './vosk')],
-(win_ex) : datas = [('c:\\..\\ontama\\Lib\\site-packages\\vosk', './vosk')],
-(mac_ex) : datas = [('/Users/../ontama/lib/python3.10/site-packages/vosk', './vosk')],
+(win ex.) : datas = [('c:\\..\\ontama\\Lib\\site-packages\\vosk', './vosk')],
+(mac ex.) : datas = [('/Users/../ontama/lib/python3.10/site-packages/vosk', './vosk')],
 ```
 
-Create exe file.
+Create execute file.
 
 ```
 pyinstaller ontama.spec
 ```
+
+Wait for moments to finish.
