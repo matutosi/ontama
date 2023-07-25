@@ -266,8 +266,26 @@ https://qiita.com/ShogoMatsumoto/items/73c494c15123f1084d67#pc
 ### Clone ontama
 
 ```
-git clone https://github.com/matutosi/ontama
+git clone https://github.com/matutosi/ontama.git
 ```
+
+### Libraries
+
+(win and mac)
+
+```
+python.exe -m pip install --upgrade pip
+pip install ffmpeg-python
+pip install pyinstaller
+pip install python-docx
+pip install soundcard
+pip install sounddevice
+pip install vosk
+```
+
+(mac) When installed Python with homebrew.
+
+brew install python-tk
 
 ### Run
 
