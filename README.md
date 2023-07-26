@@ -63,24 +63,29 @@ If you have any problems, please contact Matsumura (matutosi@konan-wu.ac.jp).
 アンインストールはフォルダごと削除すればOKです．
 
 1. (win) ontama.exe と vosk-model を任意のフォルダに保存(ここでは「ontama」とする)．   
-1. (mac) ontama と vosk-model をユーザのフォルダに保存(/Users/USERNAME/，USERNAMEはユーザ名)．   
-2. コピーに時間がかかるので，コーヒーを飲みながら(任意)しばらく待機．   
-3. 全てのファイルがコピーされると完了．   
-4. mp3 や mp4 から音声認識する場合は，ffmpegをインストールする．    
+2. (mac) ontama と vosk-model をユーザのフォルダに保存(/Users/USERNAME/，USERNAMEはユーザ名)．   
+3. コピーに時間がかかるので，コーヒーを飲みながら(任意)しばらく待機．   
+4. 全てのファイルがコピーされると完了．   
+5. mp3 や mp4 から音声認識する場合は，ffmpegをインストールする．    
 
 ffmpegのインストール方法(ダウンロード，解凍，パスの設定)は，ネットで調べてください．
 
+参考   
+https://jp.videoproc.com/edit-convert/how-to-download-and-install-ffmpeg.htm
 
 Move (copy) files.
 Delete files to uninstall.
 
 1. (win) Save ontama.exe and vosk-model in an arbitrary folder (in this case, "ontama").   
-1. (mac) Save ontama and vosk-model in your user folder (/Users/USERNAME/，USERNAME is your username)．   
-2. Wait for a while while drinking coffee (optional), as it takes time to copy the files.   
-3. When all files have been copied, it is complete.   
-4. Recognize mp3 or mp4 file, install ffmpeg.    
+2. (mac) Save ontama and vosk-model in your user folder (/Users/USERNAME/，USERNAME is your username)．   
+3. Wait for a while while drinking coffee (optional), as it takes time to copy the files.   
+4. When all files have been copied, it is complete.   
+5. Recognize mp3 or mp4 file, install ffmpeg.    
 
 Search instalation of ffmpeg with web by your self.
+
+ref.    
+https://www.hostinger.com/tutorials/how-to-install-ffmpeg
 
 ### ontama.exe と vosk-model をインターネットから取得する場合   
 ### Download ontama.exe and vosk-model from the Internet   
