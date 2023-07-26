@@ -15,8 +15,9 @@ def convert(recog):
     voice_dict = json.loads(voice_json)
     return voice_dict
 
-def write_file(voice_dict):
-    file = str(dt.datetime.now().strftime("%Y_%m_%d_%H_%M_%S"))
+def write_file(voice_dict, file = ""):
+    if file == "":
+        file = str(dt.datetime.now().strftime("%Y_%m_%d_%H_%M_%S"))
     voice2docx.voice_dict2txt(voice_dict, file)
     docx = voice2docx.voice_dict2docx(voice_dict, file)
 
@@ -36,28 +37,35 @@ device_info = sd.query_devices(device, "input")
 ### soundfile expects an int, sounddevice provides a float:
 samplerate = int(device_info["default_samplerate"])
 model = Model("./vosk-model/model-ja")
+log_res  = "ontama_log_res.txt"
+log_text = "ontama_log_text.txt"
 
 try:
-    with sd.RawInputStream(samplerate=samplerate, blocksize = 8000, device=device,
-            dtype="int16", channels=1, callback=callback):
+    with(sd.RawInputStream(samplerate=samplerate, blocksize = 8000, device=device,
+              dtype="int16", channels=1, callback=callback),
+          open(log_res , "a", encoding = "utf-8") as f_res,
+          open(log_text, "a", encoding = "utf-8") as f_text
+        ):
         print("*" * 60 + "\n")
         print("Recognizing sound from microphone" + "\n")
         print("Press Ctrl+C to STOP" + "\n")
         print("*" * 60 + "\n")
         rec = KaldiRecognizer(model, samplerate)
-        rec.SetWords(True) # 詳細を記録
+        rec.SetWords(True) # record detail
         while True:
             data = q.get()
             if rec.AcceptWaveform(data):
                 res = rec.Result()
                 text = voice_recog.extract_text(res)
                 if text != "":
-                    recog.append(voice_recog.extract_result(res))
+                    res = voice_recog.extract_result(res)
+                    recog.append(res)
+                    print(res, file = f_res) # log
+                    print(text, file = f_text) # log
                     print(text + "\n")
                     print("-" * 60 + "\n")
                     print("Press Ctrl+C to STOP" + "\n")
                     print("-" * 60 + "\n")
-
 except KeyboardInterrupt:
     print("*" * 60 + "\n")
     print("Stopped recognition" + "\n")
