@@ -297,7 +297,7 @@ git clone https://github.com/matutosi/ontama.git
 (win and mac)
 
 ```
-python.exe -m pip install --upgrade pip
+pip install --upgrade pip
 pip install ffmpeg-python
 pip install pyinstaller
 pip install python-docx
@@ -321,7 +321,7 @@ python recog_main.py
 ### Clone ontama
 
 ```
-git clone https://github.com/matutosi/ontama
+git clone https://github.com/matutosi/ontama.git
 ```
 
 ### Model
