@@ -8,7 +8,7 @@ a = Analysis(
     ['recog_main.py'],
     pathex=[],
     binaries=[],
-    datas = [('D:\\matu\\work\\ToDo\\ontama\\Lib\\site-packages\\vosk', './vosk')],
+    datas = [('d:\\matu\\work\\todo\\ontama\\Lib\\site-packages\\vosk', './vosk')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

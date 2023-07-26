@@ -370,7 +370,7 @@ source ontama/bin/Activate
 (win and mac)
 
 ```
-python.exe -m pip install --upgrade pip
+pip install --upgrade pip
 pip install ffmpeg-python
 pip install pyinstaller
 pip install python-docx
