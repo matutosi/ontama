@@ -6,7 +6,6 @@
 
 **注意**
 Win10とMac (intel cpu) では一部機能しか使えません．Mac (M1, M2)では，Pythonを使うか，自分でビルドする必要があります．   
-- (win10, mac) mp3とmp4の入力はできません(他のソフトで事前にwavに変換してください)．   
 - (mac) マイク入力は結果が保存できません．   
 
 「おんたま」は，オフラインで音声認識(文字起こし)をするためのソフトです．
@@ -17,7 +16,6 @@ Googleドキュメントの音声入力や Word for Web (Microsoft Office 365)�
 
 **WARNING**
 ONTAMA work partly on Win 10 and Mac (intel cpu).On M1 or M2 Mac, use Python or build by your self.    
-- (win10, mac) Can NOT input mp3 or mp4. Convert mp3 or mp4 into wav with other app.   
 - (mac) Can NOT save results from microphone input.
 
 ONTAMA is a software for offline speech recognition (transcription) for Japanese. 
@@ -68,6 +66,9 @@ If you have any problems, please contact Matsumura (matutosi@konan-wu.ac.jp).
 1. (mac) ontama と vosk-model をユーザのフォルダに保存(/Users/USERNAME/，USERNAMEはユーザ名)．   
 2. コピーに時間がかかるので，コーヒーを飲みながら(任意)しばらく待機．   
 3. 全てのファイルがコピーされると完了．   
+4. mp3 や mp4 から音声認識する場合は，ffmpegをインストールする．    
+
+ffmpegのインストール方法(ダウンロード，解凍，パスの設定)は，ネットで調べてください．
 
 
 Move (copy) files.
@@ -77,6 +78,9 @@ Delete files to uninstall.
 1. (mac) Save ontama and vosk-model in your user folder (/Users/USERNAME/，USERNAME is your username)．   
 2. Wait for a while while drinking coffee (optional), as it takes time to copy the files.   
 3. When all files have been copied, it is complete.   
+4. Recognize mp3 or mp4 file, install ffmpeg.    
+
+Search instalation of ffmpeg with web by your self.
 
 ### ontama.exe と vosk-model をインターネットから取得する場合   
 ### Download ontama.exe and vosk-model from the Internet   
@@ -97,7 +101,9 @@ Delete files to uninstall.
 4. ontamaフォルダ (mac: ユーザのフォルダ) に vosk-model というフォルダを作成して，3の model-ja を vosk-model の中に全て移動．   
   ここでもしばらく待機．   
 5. 全てのファイルがコピーされると完了．   
+6. mp3 や mp4 から音声認識する場合は，ffmpegをインストールする．    
 
+ffmpegのインストール方法(ダウンロード，解凍，パスの設定)は，ネットで調べてください．
 
 Downloading, unzipping and moving files takes some long time, 
 it is recommended to have coffee and a book (or other work) ready.
@@ -115,6 +121,9 @@ it is recommended to have coffee and a book (or other work) ready.
 4. Create a folder named vosk-model in ontama folder (mac: your user folder) and move all the model-ja from into vosk-model folder.   
    Again, wait for a while.    
 5. When all the files have been copied, it is complete.   
+6. Recognize mp3 or mp4 file, install ffmpeg.    
+
+Search instalation of ffmpeg with web by your self.
 
 ONTAMA use "./vosk-model/model-ja/" folder as model data regardless with the actual language that you use. 
 So when you save model files in "./vosk-model/model-ja/" folder, ONTAMA will work. 
@@ -168,7 +177,6 @@ Details are omitted.
    <img src="img/ontama_menu.png"        width="80%">    
 3. 音声ファイルや動画ファイル内の音声を認識させる場合は，「File(wav, mp3, mp4)」を選択．   
   **注意**
-  (win10, mac) mp3とmp4の入力はできません(他のソフトで事前にwavに変換してください)．   
    <img src="img/ontama_menu_file.png"   width="40%">    
   3-1. ファルを選択する画面がでるので，音声ファイルか動画ファイルを選択して，「開く」．   
    <img src="img/ontama_select_file.png" width="60%">    
@@ -199,7 +207,6 @@ It is easy to use.
 2. A black (mac: whilte) screen appears, wait a moment and a menu will appear.     
 3. Select "File(wav, mp3, mp4)" if you want to recognise the sound in an audio or video file.    
   **WARNING**
-  (win10, mac) Can NOT input mp3 or mp4. Convert mp3 or mp4 into wav with other app.   
   3-1. A screen for selecting a file appears, select an audio or video file and click 'Open'.   
   3-2. The black screen shows the progress of the various operations.    
   3-3. "FILE.docx" and "FILE_plani.txt" files are created in the same folder as the file selected (FILE is the same name as the input file). When mp3 and mp4 input, audio data in wav format "FILE.wav" will be generated (delete if unnecessary).   
@@ -269,6 +276,17 @@ https://qiita.com/ShogoMatsumoto/items/73c494c15123f1084d67#pc
 git clone https://github.com/matutosi/ontama.git
 ```
 
+### Model
+
+1. Download vosk-model-ja-0.xx.zip  or other language model (where xx is the version number) from https://alphacephei.com/vosk/models.   
+   vosk-model-en-0.xx.zip   
+   Latest version as of July 2023 https://alphacephei.com/vosk/models/vosk-model-ja-0.22.zip   
+   The download takes quite a while, so have a cup of coffee (optional) and wait a while. 
+2. Unzip the downloaded zip file.   
+   Rename "vosk-model-ja-0.xx" to "model-ja" in the extracted folder.    
+3. Create a folder named vosk-model in ontama folder and move all the model-ja from into vosk-model folder.   
+   Again, wait for a while.    
+
 ### Libraries
 
 (win and mac)
@@ -300,6 +318,17 @@ python recog_main.py
 ```
 git clone https://github.com/matutosi/ontama
 ```
+
+### Model
+
+1. Download vosk-model-ja-0.xx.zip  or other language model (where xx is the version number) from https://alphacephei.com/vosk/models.   
+   vosk-model-en-0.xx.zip   
+   Latest version as of July 2023 https://alphacephei.com/vosk/models/vosk-model-ja-0.22.zip   
+   The download takes quite a while, so have a cup of coffee (optional) and wait a while. 
+2. Unzip the downloaded zip file.   
+   Rename "vosk-model-ja-0.xx" to "model-ja" in the extracted folder.    
+3. Create a folder named vosk-model in ontama folder and move all the model-ja from into vosk-model folder.   
+   Again, wait for a while.    
 
 ### Modify codes (optional)
 
