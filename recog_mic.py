@@ -67,20 +67,17 @@ try:
                     print("Press Ctrl+C to STOP" + "\n")
                     print("-" * 60 + "\n")
 except KeyboardInterrupt:
+    stop_factor = "[Ctrl] + [c]"
+    ### exit(0)
+except Exception as e:
+    stop_factor = str(e)
+    ### exit(type(e).__name__ + ": " + str(e))
+finally:
     print("*" * 60 + "\n")
-    print("Stopped recognition" + "\n")
+    print("Stopped recognition with"  + stop_factor + "\n")
     print("*" * 60 + "\n")
     ### convert format
     voice_dict = convert(recog)
     ### write txt and docx
     write_file(voice_dict)
     exit(0)
-except Exception as e:
-    print("*" * 60 + "\n")
-    print("Stopped recognition" + "\n")
-    print("*" * 60 + "\n")
-    ### convert format
-    voice_dict = convert(recog)
-    ### write txt and docx
-    write_file(voice_dict)
-    exit(type(e).__name__ + ": " + str(e))
