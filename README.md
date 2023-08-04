@@ -147,29 +147,28 @@ Folders are those with '/' after the name.
 Details are omitted.
 
 ```
-(win) ontama/   
-    ├ ontama.exe  (実行ファイル execute file for win)   
-    ├ ontama      (実行ファイル execute file for mac)   
-    └ vosk-model/   
-        └─model-ja/   
-            ├─am/   
-            ├─conf/   
-            ├─graph/   
-            ├─ivector/   
-            ├─rescore/   
-            └─README   
-
+(win)   ontama/   
+            ├ ontama.exe  (実行ファイル execute file for win)   
+            ├ ontama      (実行ファイル execute file for mac)   
+            └ vosk-model/   
+                └─model-ja/   
+                    ├─am/   
+                    ├─conf/   
+                    ├─graph/   
+                    ├─ivector/   
+                    ├─rescore/   
+                    └─README   
 (mac) /User/USERNAME/   
-    ├ ontama      (実行ファイル execute file for mac)   
-    ├ ontama.exe  (実行ファイル execute file for win)   
-    └ vosk-model/   
-        └─model-ja/   
-            ├─am/   
-            ├─conf/   
-            ├─graph/   
-            ├─ivector/   
-            ├─rescore/   
-            └─README   
+            ├ ontama      (実行ファイル execute file for mac)   
+            ├ ontama.exe  (実行ファイル execute file for win)   
+            └ vosk-model/   
+                └─model-ja/   
+                    ├─am/   
+                    ├─conf/   
+                    ├─graph/   
+                    ├─ivector/   
+                    ├─rescore/   
+                    └─README   
 ```
 
 ## 使い方   
