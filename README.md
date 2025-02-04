@@ -355,7 +355,7 @@ Opstional but RECOMMENDED to reduce execute file.
 (win)
 ```
 python -m venv ontama
-ontama\Scripts\Activate.ps1
+ontama\Scripts\Activate
 ```
 
 (mac)
@@ -387,7 +387,7 @@ brew install python-tk
 
 ### pyinstaller
 
-Create setting file (spec).
+Create setting file (*.spec).
 
 ```
 pyi-makespec recog_main.py -n ontama --onefile
